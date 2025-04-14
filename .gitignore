@@ -1,0 +1,90 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+.venv.bak/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+*.swp
+*.swo
+# Keep *.bak, *.tmp, *.log ignored generally
+*.bak
+*.tmp
+*.log
+
+# VSCode and IDE settings
+.vscode/
+.idea/
+
+# Environment variables and secrets
+# --- CRITICAL: Keep ignoring .env files! ---
+.env
+.env.*
+
+# Data files and databases
+# --- Specific Ignores - Commented out what we NEED to commit ---
+# *.db          # Allow .db files generally
+# *.sqlite      # Allow .sqlite files generally
+# *.sqlite3     # Allow .sqlite3 files generally
+# *.csv         # Allow .csv files generally
+*.tsv
+*.dat
+# Keep ignoring general backup files
+*.bak
+# NOTE: Specific database/csv files WILL BE included because of the !data/ rule below
+
+# Allow all files in data/ directory to be tracked (override above rules)
+# --- CRITICAL: Make sure these rules allow your specific files ---
+!data/
+!data/**
+# Explicitly allow the specific files we NEED for deployment
+!data/screening_database.sqlite
+!data/jds/job_description.csv
+
+# Project-specific data to ignore
+Score/
+test_database.py
+inspect_data.py # Also ignore this test script
+
+# Model files (if any) - Keep ignoring these large files
+*.bin
+*.pt
+*.ckpt
+
+# Streamlit cache - Keep ignoring
+.streamlit/
+
+# Ollama model cache (if used) - Keep ignoring
+ollama/
+
+# PDF and document files (CVs) - Keep ignoring these as they aren't needed for Option 3 demo
+*.pdf
+*.docx
+
+# Backup files - Keep ignoring
+*~
+*.orig
+
+# Ignore prompts if they might contain sensitive info or examples? Your choice.
+# prompts/ # Decided to UNIGNORE prompts as they are part of the logic config
+
+# Ignore any user-generated files
+update_candidate*.sql
+
+# Double-check: Ignore backup and temp files again
+*.tmp
+*.temp

@@ -1,0 +1,21 @@
+# Ollama Settings
+ollama_model: "mistral"  # Or choose another pulled model like llama3, gemma, etc.
+ollama_base_url: "http://localhost:11434" # Default Ollama API endpoint
+
+# Database Settings
+database_path: "data/screening_database.sqlite"
+
+# Agent Settings
+shortlisting_threshold: 0.5 # Score threshold (e.g., 50%) for shortlisting
+cv_directory: "data/cvs"
+jd_csv_path: "data/jds/job_description.csv"
+
+# Matching Weights (Example - adjust as needed)
+# We might refine this later
+# config.yaml (Example Adjustment)
+# config.yaml - Example Aggressive Weighting
+matching_weights:
+  skills: 0.20       # Lowered
+  experience: 0.50    # Increased Significantly
+  education: 0.15     # Lowered
+  requirements: 0.15  # Increased slightly

@@ -1,0 +1,25 @@
+Analyze the following CV text and extract the relevant professional information into a JSON object.
+Focus on identifying all qualifications, experience, and skills that could be relevant for job matching.
+
+The JSON object MUST have the following keys:
+- "skills": [list of all mentioned technical skills, programming languages, software, tools, and technologies. Be specific. Example: ["python", "java", "tensorflow", "docker", "aws ec2", "git"]]
+- "soft_skills": [list of interpersonal and behavioral skills mentioned. Example: ["communication", "teamwork", "problem-solving"]]
+- "domain_expertise": [list of specific industry domains or specialized knowledge areas. Example: ["cybersecurity", "natural language processing", "e-commerce analytics"]]
+- "total_experience_years": [total years of relevant professional experience as a number (float or int). Calculate based on dates if possible, otherwise estimate or return null.]
+- "education": [list of ACADEMIC degrees obtained, including degree name, major, and institution if available. Example: ["Bachelor of Science in Computer Science - University X", "Master of Engineering in AI - University Y"]]
+- "certifications": [list of professional CERTIFICATIONS, licenses, or accreditations mentioned. Example: ["AWS Certified Solutions Architect", "Certified Ethical Hacker (CEH)"]]
+- "recent_job_titles": [list of the 1-2 most recent job titles held. Example: ["Software Engineer", "Data Scientist"]]
+- "industry_experience": [list of industries the candidate has worked in. Example: ["finance", "healthcare technology"]]
+
+CV Text:
+---
+{cv_text}
+---
+
+IMPORTANT GUIDELINES:
+1. Extract ALL mentioned skills, degrees, and certifications.
+2. Format all list items as lowercase strings unless it's a proper noun like a certification name (e.g., keep "AWS Certified Solutions Architect" as is, but "python" should be lowercase).
+3. Prioritize accuracy and completeness for all fields.
+4. Calculate total experience years carefully if possible.
+
+Respond ONLY with the valid JSON object. Do not include explanations or introductory text. Ensure the output is a single, valid JSON structure.

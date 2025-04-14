@@ -1,0 +1,27 @@
+Analyze the following job description and extract the key information into a valid JSON object.
+Be precise and extract information ONLY from the provided text.
+
+The JSON object MUST have the following keys:
+- "required_skills": [List of essential technical skills, programming languages, software, or tools explicitly mentioned as REQUIRED. Example: ["python", "sql", "api design"]]
+- "preferred_skills": [List of skills mentioned as PREFERRED, desired, nice-to-have, or a plus. Example: ["react", "cloud formation"]]
+- "domain_expertise": [List of specific industry domains or specialized knowledge areas mentioned (e.g., "e-commerce", "healthcare analytics", "supply chain"). Empty list [] if none mentioned.]
+- "soft_skills": [List of interpersonal or behavioral skills mentioned (e.g., "communication", "teamwork", "problem-solving"). Empty list [] if none mentioned.]
+- "required_education": [String describing the minimum education level required (e.g., "Bachelor's Degree in Computer Science", "Master's Degree or equivalent experience"). Use "Not Specified" if not mentioned.]
+- "required_experience_years": [String describing the minimum years of relevant experience (e.g., "3 years", "5+ years", "3-5 years"). Use "Not Specified" if no specific number of years is mentioned. Focus on extracting the NUMBER of years.]
+- "essential_requirements": [List of specific certifications, licenses, security clearances, or other non-negotiable qualifications mentioned. Example: ["AWS Certified Solutions Architect", "Security Clearance TS/SCI"]. Empty list [] if none mentioned.]
+- "key_responsibilities": [List of 3-5 main job duties or responsibilities described. Example: ["Develop and test software", "Collaborate with teams", "Optimize performance"]]
+
+Job Description:
+---
+{job_description_text}
+---
+
+IMPORTANT GUIDELINES:
+1.  **Accuracy is key.** Extract information directly present in the text. Do not infer or add information not present.
+2.  **Experience Years:** Focus specifically on the number of years required for the `required_experience_years` field. If the text mentions experience but gives no number (e.g., "Experience with databases"), the value should be "Not Specified".
+3.  **Education:** Capture the degree level and field if mentioned for `required_education`. If only "related field" is mentioned, use that. If nothing is mentioned, use "Not Specified".
+4.  **Skills:** Differentiate carefully between explicitly REQUIRED skills and PREFERRED skills based on the wording. Technical skills go in `required_skills` or `preferred_skills`. Industry knowledge goes in `domain_expertise`. Interpersonal skills go in `soft_skills`.
+5.  **Essentials:** Only include explicitly stated mandatory items like specific certifications or clearances in `essential_requirements`.
+6.  **Format:** Ensure all list items are strings. Use lowercase for skills unless it's a proper noun (like a specific technology name or certification). Ensure the final output is ONLY the JSON object.
+
+Respond ONLY with the valid JSON object. No explanations, apologies, or introductory text before or after the JSON.
