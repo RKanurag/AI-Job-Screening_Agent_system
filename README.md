@@ -63,7 +63,7 @@ The current deployment (or live demo) uses preprocessed data. The developer has 
 
 ## License
 
-This project is for educational and research purposes. Please review the LICENSE file for more details.
+Please review the LICENSE file for more details.
 
 # For cloud deployment
 To deploy this project on the cloud and use a cloud-based LLM (such as OpenAI, Anthropic, or any other provider), you do not need to change any code. The only change required is to update the config.yaml file with your cloud LLM provider's details.
